@@ -32,11 +32,11 @@ public class CourseRepositoryTest {
 
 //        Course savedCourse = courseRepository.addCourse(course);
 
-        log.info("Saved course: {}", savedCourse);
+        log.info("Saved course: {}", course);
 
-        assertNotNull(savedCourse.getNumCourse());
-        assertEquals(3, savedCourse.getLevel());
-        assertEquals(Support.SKI, savedCourse.getSupport());
+        assertNotNull(course.getNumCourse());
+        assertEquals(3, course.getLevel());
+        assertEquals(Support.SKI, course.getSupport());
 
     }
 }
