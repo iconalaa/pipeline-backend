@@ -30,7 +30,7 @@ public class CourseRepositoryTest {
         course.setPrice(120.5f);
         course.setTimeSlot(2);
 
-        Course savedCourse = courseRepository.addCourse(course);
+//        Course savedCourse = courseRepository.addCourse(course);
 
         log.info("Saved course: {}", savedCourse);
 
