@@ -1,5 +1,5 @@
 # Use Maven to build the project
-FROM maven:3.9.3-eclipse-temurin-17 AS build
+FROM openjdk:17-jdk-alpine
 
 # Set working directory inside container
 WORKDIR /app
