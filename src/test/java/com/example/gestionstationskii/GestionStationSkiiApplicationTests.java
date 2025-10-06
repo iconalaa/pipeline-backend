@@ -16,13 +16,13 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j
-public class CourseRepositoryTest {
+public class GestionStationSkiiApplicationTests {
 
     @Autowired
     private ICourseServices courseRepository;
 
     @Test
-    public void testAddCourse() {
+    void contextLoads() {
         Course course = new Course();
         course.setLevel(3);
         course.setTypeCourse(TypeCourse.COLLECTIVE_CHILDREN);
