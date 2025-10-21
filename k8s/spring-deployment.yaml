@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: studentmang-app
+  name: stationskii-app
   namespace: devops
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: studentmang-app
+      app: stationskii-app
   template:
     metadata:
       labels:
-        app: studentmang-app
+        app: stationskii-app
     spec:
       containers:
-        - name: studentmang-app
-          image: maramsd/studentmang-app:latest
+        - name: gestion-station-skii
+          image: rayenhamdi/gestion-station-skii:latest
           ports:
             - containerPort: 8080
           env:
@@ -38,7 +38,7 @@ metadata:
   namespace: devops
 spec:
   selector:
-    app: studentmang-app
+    app: stationskii-app
   ports:
     - protocol: TCP
       port: 8080
