@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: gestion-station-skii
-          image: rayenhamdi/gestion-station-skii:28
+          image: iconala/gestion-station-ski:10
           ports:
             - containerPort: 8080
           env:
