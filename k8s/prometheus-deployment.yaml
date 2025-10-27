@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: prometheus-config
+  namespace: devops
   labels:
     app: prometheus
 data:
@@ -12,17 +13,17 @@ data:
       - job_name: prometheus
         static_configs:
           - targets: ['localhost:9090']
-      # Example: scrape your Spring app / Actuator metrics if exposed
+      # Example: scrape your Spring app metrics if exposed
       # - job_name: spring
       #   static_configs:
-      #     - targets: ['spring-service:8080']   # change to your service name:port
+      #     - targets: ['spring-service:8080']
       #   metrics_path: /actuator/prometheus
-
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: prometheus-deploy
+  namespace: devops
   labels:
     app: prometheus
 spec:
@@ -49,18 +50,18 @@ spec:
         - name: prometheus-config
           configMap:
             name: prometheus-config
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: prometheus-service
+  namespace: devops
   labels:
     app: prometheus
 spec:
-  type: NodePort
   selector:
     app: prometheus
+  type: NodePort
   ports:
     - name: http
       port: 9090
